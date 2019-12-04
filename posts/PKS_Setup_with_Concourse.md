@@ -1,3 +1,11 @@
+
+---
+layout: post
+title:  "Pivotal Container Service"
+date:   2019-12-04 11:30:00
+categories: concourse pks
+---
+
 # Setup PKS Using Concourse in GCP
 ## Setup the Pre-requisites in GCP using Terraform
 Create a folder with name 'workspace' in user home, clone the [repository](https://github.com/pivotal-cf/terraforming-gcp).
