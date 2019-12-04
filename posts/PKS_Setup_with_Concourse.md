@@ -1,7 +1,7 @@
 # Setup PKS Using Concourse in GCP
 ## Setup the Pre-requisites in GCP using Terraform
 Create a folder with name 'workspace' in user home, clone the [repository](https://github.com/pivotal-cf/terraforming-gcp).
-Change the directory to terraforming-pks and create a file 'terraform.tfvars' with the below content.
+Change the directory to _terraforming-pks_ and create a file `terraform.tfvars` with the below content.
 ```
 env_name         = "ci-pks"
 opsman_image_url = ""
