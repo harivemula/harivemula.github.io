@@ -36,7 +36,6 @@ credhub api --ca-cert <credhub-ca.pem> https://<credhub-ip>:8844
 - Login to credhub using client secret
 ```
 credhub login --client-name=credhub-admin --client-secret=<client secret>
-
 ```
 
 - Set the below cedentials in Credhub under your team name (as per concourse pipeline)
