@@ -79,37 +79,45 @@ credhub set -n /concourse/team-a/pks_tls -t certificate -c <pks.cert> -p <pks.ke
 ```
 credhub set -n /concourse/team-a/gcp-project-id -t value -v "$(terraform output -json | jq -r .project.value)"
 ```
-- opsmanager_decryption_password: Your required passphrase for Opsman decryption.
-```
 
-```
+- opsmanager_decryption_password: Your required passphrase for Opsman decryption.
+
 - opsmanager_admin_password: Set a new password for opsman admin user
 - opsmanager_admin_user: Set a new user name for opsman.
 - credhub-ca-cert:  Credhub ca cert
+
 ```
 credhub set -n /concourse/team-a/domain-crt -t value -v "$(cat credhub-ca.pem)"
 ```
+
 - credhub-secret: Credhub client secret
 - credhub-client: Credhub client name
 - plat-auto-pipes-deploy-key: Your own ssh keys, in next steps you will configure your git to use this key.
+
 ```
 credhub set -n /concourse/team-a/plat-auto-pipes-deploy-key -t ssh -p ~/.ssh/id_rsa -u ~/.ssh/id_rsa.pub
 ```
+
 - gcp-pks-master-sa : Value from terraform output (pks_master_node_service_account_email)
+
 ```
 credhub set -n /concourse/team-a/gcp-pks-master-sa -t value -v <pks master service account email>
 ```
 
 - gcp-pks-worker-sa: value from terraform output (pks_worker_node_service_account_email)
+
 ```
 credhub set -n /concourse/team-a/gcp-pks-worker-sa -t value -v <pks worker service account email>
 ```
+
 - Ops manager dns: ops_manager_dns
+
 ```
 credhub set -n /concourse/team-a/opsman-url -t value -v "https://$(terraform output -json | jq -r .ops_manager_dns.value)"
 ```
 
 - pks-api-fqdn
+
 ```
 credhub set -n /concourse/team-a/pks-api-fqdn -t value -v "$(terraform output -json | jq -r .pks_api_endpoint.value)"
 ```
@@ -118,6 +126,7 @@ credhub set -n /concourse/team-a/pks-api-fqdn -t value -v "$(terraform output -j
 
 ## Configure github
 - Fork the repo - https://github.com/harivemula/platform-automation-pks
+
 ### Configure github for ssh keys
 - Go to Settings under your name
 - Go to SSH and GPG keys
@@ -128,6 +137,7 @@ credhub set -n /concourse/team-a/pks-api-fqdn -t value -v "$(terraform output -j
 
 ## Working on pipeline
 - Clone the repo that you forked above.
+
 ```
 git clone https://github.com/harivemula/platform-automation-pks
 ```
@@ -147,6 +157,7 @@ git clone https://github.com/harivemula/platform-automation-pks
 
 
 ## Login to Concourse using Fly
+
 ```
 fly -t ci login -u <username> -p <password> -n <team-a> -c <concourse url | http://<ip>:8080>
 ```
