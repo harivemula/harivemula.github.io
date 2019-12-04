@@ -1,5 +1,5 @@
-#Setup PKS Using Concourse in GCP
-##Setup the Pre-requisites in GCP using Terraform
+# Setup PKS Using Concourse in GCP
+## Setup the Pre-requisites in GCP using Terraform
 Create a folder with name 'workspace' in user home, clone the repository 'https://github.com/pivotal-cf/terraforming-gcp'.
 Change the directory to terraforming-pks and create a file 'terraform.tfvars' with the below content.
 ```
@@ -28,7 +28,7 @@ terraform output -j | jq -r .
 - Under user name -> Click on Edit Profile
 - Click on 'Request New Refresh Token' to generate a pivnet token.
 
-##Configure Credhub
+## Configure Credhub
 - Set Credhub target
 ```
 credhub api --ca-cert <credhub-ca.pem> https://<credhub-ip>:8844
@@ -45,11 +45,11 @@ Pivnet Token
 credhub set -n /concourse/team-a/pivnet-refresh-token -t value -v <token>
 credhub set -n /concourse/team-a/pivnet-token -t value -v <token>
 ```
-Verify credhub element, and ensure it created properly.
+- Verify credhub element, and ensure it created properly.
 ```
 credhub get -n /concourse/team-a/pivnet-refresh-token
 ```
-Set the credhub entries for below under /team-a/
+- Set the credhub entries for below under /team-a/
 - gcp_service_account_json: GCP Master Service Account JSON
 ```
 cat <serivceaccount-token.json>|jq -c
@@ -100,7 +100,7 @@ credhub set -n /concourse/team-a/plat-auto-pipes-deploy-key -t ssh -p ~/.ssh/id_
 credhub set -n /concourse/team-a/gcp-pks-master-sa -t value -v <pks master service account email>
 ```
 
--gcp-pks-worker-sa: value from terraform output (pks_worker_node_service_account_email)
+- gcp-pks-worker-sa: value from terraform output (pks_worker_node_service_account_email)
 ```
 credhub set -n /concourse/team-a/gcp-pks-worker-sa -t value -v <pks worker service account email>
 ```
