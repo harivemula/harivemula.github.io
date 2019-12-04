@@ -1,6 +1,6 @@
 # Setup PKS Using Concourse in GCP
 ## Setup the Pre-requisites in GCP using Terraform
-Create a folder with name 'workspace' in user home, clone the repository 'https://github.com/pivotal-cf/terraforming-gcp'.
+Create a folder with name 'workspace' in user home, clone the [repository](https://github.com/pivotal-cf/terraforming-gcp).
 Change the directory to terraforming-pks and create a file 'terraform.tfvars' with the below content.
 ```
 env_name         = "ci-pks"
@@ -12,7 +12,6 @@ dns_suffix       = "env1.k8scloud.cf"
 service_account_key = "terraform-svc.json"
 create_gcs_buckets = true
 external_database = false
-
 ```
 
 ```
@@ -149,7 +148,7 @@ git clone https://github.com/harivemula/platform-automation-pks
   - region: Region you have mentioned in terraform.tfvars
   - az1: AZ Name from your terraform.tfvars
   - gcs_bucket: GCS Bucket name - to store the backups of foundation.
-  -
+
 - Open env.yml
   - target: set the opsman url from terraform output.
 
