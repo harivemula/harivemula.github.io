@@ -47,56 +47,55 @@ credhub set -n /concourse/team-a/pivnet-token -t value -v <token>
 ```
 credhub get -n /concourse/team-a/pivnet-refresh-token
 ```
-- Set the credhub entries for below under /team-a/
-- gcp_service_account_json: GCP Master Service Account JSON
+### Set the credhub entries for below under /team-a/
+- `gcp_service_account_json`: GCP Service Account JSON - Same as the one you have used to run terraform.
 ```
 cat <serivceaccount-token.json>|jq -c
 credhub set -n /concourse/team-a/gcp_service_account_json -t value -v '<json output of above command>'
 ```
-- gcp_opsman_sa_json: SA JSON content of the opsman service account (service_account_email field in terraform output)
+- `gcp_opsman_sa_json`: SA JSON content of the opsman service account (service_account_email field in terraform output)
 
-- opsman_public_ip: Value from 'ops_manager_public_ip' of terraform output
-- gcp_pks_master_sa_json: value from 'pks_master_node_service_account_key'
+- `opsman_public_ip`: Value from 'ops_manager_public_ip' of terraform output
+- `gcp_pks_master_sa_json`: value from 'pks_master_node_service_account_key'
 ```
-terraform output -json | jq -r .pks_master_node_service_account_key.value | jq -c
-credhub set -n /concourse/team-a/gcp_pks_master_sa_json -t value -v '<json output of above command>'
+credhub set -n /concourse/team-a/gcp_pks_master_sa_json -t value -v "$(terraform output -json | jq -r .pks_master_node_service_account_key.value | jq -c)"
 ```
-- opsman-ssh-pub: value from 'ops_manager_ssh_public_key'
+- `opsman-ssh-pub`: value from 'ops_manager_ssh_public_key'
 ```
 crehub set -n $CREDHUB_PREFIX/opsman-ssh-pub -t value -v "$(terraform output -json | jq -r .ops_manager_ssh_public_key)"
 ```
-- domain-crt: Your own root ca cert
-- pks_tls: Generate Certs for your domain name in terraform output for 'pks_api_endpoint'
+- `domain-crt`: Your own root ca cert
+- `pks_tls`: Generate Certs for your domain name in terraform output for 'pks_api_endpoint'
 TODO: Steps to create your own root ca and cert for the pks api.
 
 ```
 credhub set -n /concourse/team-a/domain-crt -t value -v "$(cat hari_rootca.crt)"
 credhub set -n /concourse/team-a/pks_tls -t certificate -c <pks.cert> -p <pks.key>
 ```
-- gcp-project-id: Your GCP Project Id
+- `gcp-project-id`: Your GCP Project Id
 ```
 credhub set -n /concourse/team-a/gcp-project-id -t value -v "$(terraform output -json | jq -r .project.value)"
 ```
 
-- opsmanager_decryption_password: Your required passphrase for Opsman decryption.
+- `opsmanager_decryption_password`: Your required passphrase for Opsman decryption.
 
-- opsmanager_admin_password: Set a new password for opsman admin user
-- opsmanager_admin_user: Set a new user name for opsman.
-- credhub-ca-cert:  Credhub ca cert
+- `opsmanager_admin_password`: Set a new password for opsman admin user
+- `opsmanager_admin_user`: Set a new user name for opsman.
+- `credhub-ca-cert`:  Credhub ca cert
 
 ```
 credhub set -n /concourse/team-a/domain-crt -t value -v "$(cat credhub-ca.pem)"
 ```
 
-- credhub-secret: Credhub client secret
-- credhub-client: Credhub client name
-- plat-auto-pipes-deploy-key: Your own ssh keys, in next steps you will configure your git to use this key.
+- `credhub-secret`: Credhub client secret
+- `credhub-client`: Credhub client name
+- `plat-auto-pipes-deploy-key`: Your own ssh keys, in next steps you will configure your git to use this key.
 
 ```
 credhub set -n /concourse/team-a/plat-auto-pipes-deploy-key -t ssh -p ~/.ssh/id_rsa -u ~/.ssh/id_rsa.pub
 ```
 
-- gcp-pks-master-sa : Value from terraform output (pks_master_node_service_account_email)
+- `gcp-pks-master-sa` : Value from terraform output (pks_master_node_service_account_email)
 
 ```
 credhub set -n /concourse/team-a/gcp-pks-master-sa -t value -v <pks master service account email>
@@ -142,15 +141,15 @@ git clone https://github.com/harivemula/platform-automation-pks
 - Change directory to platform-automation-pks
 - Delete the content of state.yml
 - Open vars.yml
-  - opsman-url: is from your terraform output - key: ops_manager_dns
-  - pipeline-repo: get the repo ssh url from github
-  - subdomain-name: Give the env_name value from your terraform.tfvars
-  - region: Region you have mentioned in terraform.tfvars
-  - az1: AZ Name from your terraform.tfvars
-  - gcs_bucket: GCS Bucket name - to store the backups of foundation.
+  - `opsman-url`: is from your terraform output - key: ops_manager_dns
+  - `pipeline-repo`: get the repo ssh url from github
+  - `subdomain-name`: Give the env_name value from your terraform.tfvars
+  - `region`: Region you have mentioned in terraform.tfvars
+  - `az1`: AZ Name from your terraform.tfvars
+  - `gcs_bucket`: GCS Bucket name - to store the backups of foundation.
 
 - Open env.yml
-  - target: set the opsman url from terraform output.
+  - `target`: set the opsman url from terraform output.
 
 
 
