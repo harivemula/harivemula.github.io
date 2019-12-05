@@ -106,13 +106,13 @@ credhub set -n /concourse/team-a/plat-auto-pipes-deploy-key -t ssh -p ~/.ssh/id_
 - `gcp-pks-master-sa` : Value from terraform output (pks_master_node_service_account_email)
 
 ```
-credhub set -n /concourse/team-a/gcp-pks-master-sa -t value -v <pks master service account email>
+credhub set -n /concourse/team-a/gcp-pks-master-sa -t value -v "$(terraform output -json | jq -r .pks_master_node_service_account_email.value)"
 ```
 
 - gcp-pks-worker-sa: value from terraform output (pks_worker_node_service_account_email)
 
 ```
-credhub set -n /concourse/team-a/gcp-pks-worker-sa -t value -v <pks worker service account email>
+credhub set -n /concourse/team-a/gcp-pks-worker-sa -t value -v "$(terraform output -json | jq -r .pks_worker_node_service_account_email.value)"
 ```
 
 - Ops manager dns: ops_manager_dns
