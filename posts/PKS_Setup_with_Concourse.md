@@ -116,7 +116,7 @@ credhub set -n /concourse/team-a/pks-api-fqdn -t value -v "$(terraform output -j
 - `opsmanager_admin_user`: Set a new user name for opsman.
 - `credhub-ca-cert`:  Credhub ca cert
 ```
-credhub set -n /concourse/team-a/domain-crt -t value -v "$(cat credhub-ca.pem)"
+credhub set -n /concourse/team-a/credhub-ca-cert -t value -v "$(cat credhub-ca.pem)"
 ```
 - `credhub-secret`: Credhub client secret
 - `credhub-client`: Credhub client name
