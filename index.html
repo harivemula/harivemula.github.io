@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Vlogger - Transform Your iPhone into a Professional YouTube Live Streaming Studio">
+    <title>Vlogger - YouTube Live Streaming Made Easy</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            min-height: 100vh;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        
+        .logo {
+            max-width: 180px;
+            height: auto;
+            margin-bottom: 20px;
+            filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1));
+        }
+        
+        .tagline {
+            font-size: 1.5em;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            font-size: 1.1em;
+            opacity: 0.95;
+        }
+        
+        nav {
+            background: #f8f9fa;
+            padding: 15px;
+            text-align: center;
+            border-bottom: 1px solid #dee2e6;
+        }
+        
+        nav a {
+            color: #667eea;
+            text-decoration: none;
+            margin: 0 20px;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        nav a:hover {
+            color: #764ba2;
+        }
+        
+        main {
+            padding: 40px 20px;
+        }
+        
+        .hero {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .hero h1 {
+            font-size: 2.5em;
+            color: #667eea;
+            margin-bottom: 20px;
+        }
+        
+        .hero p {
+            font-size: 1.2em;
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin: 50px 0;
+        }
+        
+        .feature {
+            padding: 30px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+        }
+        
+        .feature h3 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+        
+        .feature ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .feature li {
+            padding: 5px 0;
+            padding-left: 20px;
+            position: relative;
+        }
+        
+        .feature li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-weight: bold;
+        }
+        
+        .how-it-works {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 50px 30px;
+            border-radius: 15px;
+            margin: 50px 0;
+        }
+        
+        .how-it-works h2 {
+            text-align: center;
+            font-size: 2em;
+            margin-bottom: 40px;
+        }
+        
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+        
+        .step {
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .step-number {
+            width: 50px;
+            height: 50px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        
+        .cta {
+            text-align: center;
+            margin: 50px 0;
+        }
+        
+        .download-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 18px 50px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-size: 1.2em;
+            font-weight: 600;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+        }
+        
+        .download-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+        }
+        
+        .requirements {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 20px;
+            margin: 40px 0;
+            border-radius: 5px;
+        }
+        
+        .requirements h3 {
+            color: #856404;
+            margin-bottom: 10px;
+        }
+        
+        .requirements ul {
+            color: #856404;
+            margin-left: 20px;
+        }
+        
+        footer {
+            background: #2c3e50;
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+        }
+        
+        footer a {
+            color: #667eea;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+        
+        footer a:hover {
+            text-decoration: underline;
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2em;
+            }
+            
+            .tagline {
+                font-size: 1.2em;
+            }
+            
+            nav a {
+                display: block;
+                margin: 10px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="assets/logo.png" alt="Vlogger Logo" class="logo">
+            <div class="tagline">YouTube Live Streaming Made Easy</div>
+            <div class="subtitle">Stream live to YouTube from your iPhone with professional features</div>
+        </header>
+        
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="terms.html">Terms & Conditions</a>
+            <a href="privacy.html">Privacy Policy</a>
+        </nav>
+        
+        <main>
+            <div class="hero">
+                <h1>Transform Your iPhone into a Professional YouTube Live Streaming Studio</h1>
+                <p>Vlogger is the ultimate mobile app for content creators who want to go live on YouTube instantly. Whether you're a vlogger, gamer, educator, or live streamer, Vlogger gives you the power to broadcast professional-quality live streams directly to your YouTube channel—all from your iPhone.</p>
+            </div>
+            
+            <div class="features">
+                <div class="feature">
+                    <h3>📱 Seamless YouTube Integration</h3>
+                    <ul>
+                        <li>One-tap YouTube account linking</li>
+                        <li>Secure OAuth authentication</li>
+                        <li>Automatic live streaming setup</li>
+                        <li>Real-time stream status monitoring</li>
+                    </ul>
+                </div>
+                
+                <div class="feature">
+                    <h3>🎥 Professional Streaming Controls</h3>
+                    <ul>
+                        <li>Advanced RTMP streaming technology</li>
+                        <li>Customizable video quality (720p, 1080p)</li>
+                        <li>Auto-start and auto-stop controls</li>
+                        <li>Schedule streams with date picker</li>
+                    </ul>
+                </div>
+                
+                <div class="feature">
+                    <h3>🎨 Customization Options</h3>
+                    <ul>
+                        <li>Upload custom thumbnails</li>
+                        <li>Auto-generate thumbnails</li>
+                        <li>Set stream privacy levels</li>
+                        <li>Add titles and descriptions</li>
+                    </ul>
+                </div>
+                
+                <div class="feature">
+                    <h3>⚡ Easy Setup</h3>
+                    <ul>
+                        <li>Intuitive interface for creators</li>
+                        <li>Quick stream creation in seconds</li>
+                        <li>No technical expertise required</li>
+                        <li>Automatic stream key management</li>
+                    </ul>
+                </div>
+                
+                <div class="feature">
+                    <h3>🔐 Secure & Private</h3>
+                    <ul>
+                        <li>Industry-standard encryption</li>
+                        <li>Secure token storage</li>
+                        <li>Your data is never sold</li>
+                        <li>Full control over YouTube connection</li>
+                    </ul>
+                </div>
+                
+                <div class="feature">
+                    <h3>👥 Perfect For</h3>
+                    <ul>
+                        <li>Vloggers and content creators</li>
+                        <li>Live event broadcasters</li>
+                        <li>Mobile journalists</li>
+                        <li>Educators and trainers</li>
+                        <li>Gaming streamers</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="how-it-works">
+                <h2>How It Works</h2>
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <p>Sign in with your email or social account</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <p>Link your YouTube channel (one time)</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <p>Create your live stream with custom settings</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <p>Start broadcasting instantly</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">5</div>
+                        <p>Monitor your stream in real-time</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="requirements">
+                <h3>Requirements:</h3>
+                <ul>
+                    <li>iOS 17.0 or later</li>
+                    <li>YouTube account</li>
+                    <li>Active internet connection</li>
+                    <li>YouTube Live enabled (may take 24 hours for new channels)</li>
+                </ul>
+            </div>
+            
+            <div class="cta">
+                <a href="#" class="download-btn">Download from App Store</a>
+                <p style="margin-top: 20px; color: #666;">Available on iOS 17.0 and later</p>
+            </div>
+        </main>
+        
+        <footer>
+            <p>&copy; 2026 Vlogger. All rights reserved.</p>
+            <p>
+                <a href="terms.html">Terms & Conditions</a> |
+                <a href="privacy.html">Privacy Policy</a>
+            </p>
+        </footer>
+    </div>
+</body>
+</html>
