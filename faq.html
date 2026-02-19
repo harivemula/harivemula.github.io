@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Vlogger Studio FAQ - Frequently Asked Questions">
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <link rel="apple-touch-icon" href="assets/favicon.png">
+    <title>FAQ - Vlogger Studio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            min-height: 100vh;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        
+        .logo {
+            max-width: 180px;
+            height: auto;
+            margin-bottom: 20px;
+            filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1));
+        }
+        
+        nav {
+            background: #f8f9fa;
+            padding: 15px;
+            text-align: center;
+            border-bottom: 1px solid #dee2e6;
+        }
+        
+        nav a {
+            color: #667eea;
+            text-decoration: none;
+            margin: 0 20px;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        nav a:hover {
+            color: #764ba2;
+        }
+        
+        main {
+            padding: 40px 20px;
+        }
+        
+        h1 {
+            color: #667eea;
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .toc {
+            background: #f8f9fa;
+            padding: 30px;
+            margin-bottom: 40px;
+            border-radius: 10px;
+        }
+        
+        .toc h2 {
+            color: #667eea;
+            margin-bottom: 15px;
+        }
+        
+        .toc ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .toc li {
+            margin: 8px 0;
+        }
+        
+        .toc a {
+            color: #667eea;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .toc a:hover {
+            color: #764ba2;
+            text-decoration: underline;
+        }
+        
+        .faq-section {
+            margin-bottom: 50px;
+        }
+        
+        .faq-section h2 {
+            color: #667eea;
+            font-size: 2em;
+            margin-bottom: 25px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #667eea;
+        }
+        
+        .faq-section h3 {
+            color: #333;
+            font-size: 1.3em;
+            margin-top: 25px;
+            margin-bottom: 10px;
+        }
+        
+        .faq-section p, .faq-section ul, .faq-section ol {
+            margin-bottom: 15px;
+            color: #555;
+        }
+        
+        .faq-section ul, .faq-section ol {
+            margin-left: 25px;
+        }
+        
+        .faq-section a {
+            color: #667eea;
+            text-decoration: none;
+        }
+        
+        .faq-section a:hover {
+            text-decoration: underline;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: white;
+        }
+        
+        table th {
+            background: #667eea;
+            color: white;
+            padding: 12px;
+            text-align: left;
+            font-weight: 600;
+        }
+        
+        table td {
+            padding: 12px;
+            border-bottom: 1px solid #dee2e6;
+        }
+        
+        table tr:hover {
+            background: #f8f9fa;
+        }
+        
+        footer {
+            background: #2c3e50;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        
+        footer a {
+            color: #667eea;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+        
+        footer a:hover {
+            text-decoration: underline;
+        }
+        
+        .social-share {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .social-share h3 {
+            font-size: 1em;
+            margin-bottom: 15px;
+            color: rgba(255,255,255,0.8);
+        }
+        
+        .social-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        
+        .social-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            border-radius: 25px;
+            text-decoration: none;
+            color: white;
+            font-weight: 500;
+            transition: transform 0.3s, opacity 0.3s;
+        }
+        
+        .social-btn:hover {
+            transform: translateY(-2px);
+            opacity: 0.9;
+        }
+        
+        .social-btn.twitter { background: #1DA1F2; }
+        .social-btn.facebook { background: #4267B2; }
+        .social-btn.linkedin { background: #0077B5; }
+        .social-btn.reddit { background: #FF4500; }
+        .social-btn.whatsapp { background: #25D366; }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+            
+            nav a {
+                display: block;
+                margin: 10px 0;
+            }
+            
+            main {
+                padding: 20px 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <a href="index.html"><img src="assets/logo.png" alt="Vlogger Studio" class="logo"></a>
+            <h1 style="color: white; margin: 0;">Frequently Asked Questions</h1>
+        </header>
+        
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="userguide.html">User Guide</a>
+            <a href="faq.html">FAQ</a>
+            <a href="terms.html">Terms & Conditions</a>
+            <a href="https://vlogger-studio.harivemula.com/privacy.html">Privacy Policy</a>
+        </nav>
+        
+        <main>
+            <div class="toc">
+                <h2>Table of Contents</h2>
+                <ul>
+                    <li><a href="#general">1. General</a></li>
+                    <li><a href="#account">2. Account & Sign-In</a></li>
+                    <li><a href="#youtube-linking">3. YouTube Account Linking</a></li>
+                    <li><a href="#youtube-live">4. Enabling YouTube Live</a></li>
+                    <li><a href="#creating-streams">5. Creating Streams</a></li>
+                    <li><a href="#streaming">6. Streaming & Broadcasting</a></li>
+                    <li><a href="#quality">7. Video & Audio Quality</a></li>
+                    <li><a href="#management">8. Stream Management</a></li>
+                    <li><a href="#settings">9. Settings & Customization</a></li>
+                    <li><a href="#troubleshooting">10. Troubleshooting</a></li>
+                    <li><a href="#privacy">11. Privacy & Security</a></li>
+                    <li><a href="#account-management">12. Account Management</a></li>
+                </ul>
+            </div>
+            
+            <div id="general" class="faq-section">
+                <h2>1. General</h2>
+                
+                <h3>What is Vlogger Studio?</h3>
+                <p>Vlogger Studio is an iOS app that turns your iPhone into a professional YouTube live streaming studio. You can create, manage, and broadcast live streams directly from your phone — no external software or hardware needed.</p>
+                
+                <h3>What devices are supported?</h3>
+                <p>Vlogger Studio requires an <strong>iPhone running iOS 17.0 or later</strong>. iPad is also supported. Android is not currently supported.</p>
+                
+                <h3>Is Vlogger Studio free to use?</h3>
+                <p>Please check the App Store listing for the latest pricing information.</p>
+                
+                <h3>Do I need a YouTube channel to use the app?</h3>
+                <p>Yes. You need a Google account with a YouTube channel to create and broadcast live streams.</p>
+            </div>
+            
+            <div id="account" class="faq-section">
+                <h2>2. Account & Sign-In</h2>
+                
+                <h3>How do I create an account?</h3>
+                <p>You can sign up using:</p>
+                <ul>
+                    <li><strong>Google</strong> — Tap "Continue with Google" on the Welcome screen.</li>
+                    <li><strong>Apple</strong> — Tap "Sign in with Apple" (uses Face ID / Touch ID).</li>
+                    <li><strong>Email</strong> — Tap "Create Account" and fill in your name, email, and password (minimum 6 characters).</li>
+                </ul>
+                
+                <h3>I didn't receive the verification email. What should I do?</h3>
+                <ul>
+                    <li>Check your <strong>spam or junk</strong> folder.</li>
+                    <li>Make sure the email address is correct.</li>
+                    <li>Wait a few minutes — email delivery can be delayed.</li>
+                    <li>Tap <strong>Resend Verification Email</strong> in the app (available every 60 seconds).</li>
+                </ul>
+                
+                <h3>I forgot my password. How do I reset it?</h3>
+                <ol>
+                    <li>On the Sign In screen, tap <strong>Forgot password?</strong></li>
+                    <li>Enter your email address.</li>
+                    <li>Check your inbox for a password reset email.</li>
+                    <li>Follow the link to set a new password.</li>
+                </ol>
+                
+                <h3>Can I sign in with a different method than I signed up with?</h3>
+                <p>If you signed up with Google, you should sign in with Google. If you signed up with email, use email and password. If you used Apple, use Sign in with Apple. Each method creates a separate account.</p>
+            </div>
+            
+            <div id="youtube-linking" class="faq-section">
+                <h2>3. YouTube Account Linking</h2>
+                
+                <h3>How do I link my YouTube account?</h3>
+                <ol>
+                    <li>From the <strong>Live Control Center</strong>, tap <strong>Link YouTube Account</strong>.</li>
+                    <li>Sign in with the Google account that owns your YouTube channel.</li>
+                    <li>Grant permission when prompted.</li>
+                </ol>
+                
+                <h3>What permissions does the app need?</h3>
+                <p>Vlogger Studio requests the <code>youtube.force-ssl</code> scope, which allows it to:</p>
+                <ul>
+                    <li>Read your YouTube channel information</li>
+                    <li>Create and manage live broadcasts</li>
+                    <li>Create and manage live streams</li>
+                </ul>
+                <p>The app does <strong>not</strong> have access to your YouTube videos, comments, subscribers, or other channel data beyond live streaming.</p>
+                
+                <h3>Can I link a different YouTube channel?</h3>
+                <p>Yes. First <strong>delink</strong> your current account:</p>
+                <ol>
+                    <li>Tap the <strong>link icon</strong> next to your channel name on the Live Control Center.</li>
+                    <li>Tap <strong>Delink YouTube Account</strong> and confirm.</li>
+                    <li>Then link a new account.</li>
+                </ol>
+                
+                <h3>I get "No YouTube channel found" when linking. What do I do?</h3>
+                <p>The Google account you signed in with doesn't have a YouTube channel. You need to:</p>
+                <ol>
+                    <li>Go to <a href="https://youtube.com" target="_blank">youtube.com</a> and sign in with that Google account.</li>
+                    <li>Create a YouTube channel.</li>
+                    <li>Return to Vlogger Studio and try linking again.</li>
+                </ol>
+                
+                <h3>I see "API access denied" when linking. Why?</h3>
+                <p>This usually means YouTube's API access has been restricted for your account. Try:</p>
+                <ul>
+                    <li>Signing in with a different Google account.</li>
+                    <li>Checking if your YouTube channel has any restrictions or strikes.</li>
+                </ul>
+                
+                <h3>I see "Missing refresh token" error. How do I fix it?</h3>
+                <ol>
+                    <li>Go to <a href="https://myaccount.google.com/permissions" target="_blank">myaccount.google.com/permissions</a>.</li>
+                    <li>Find "Vlogger Studio" and revoke access.</li>
+                    <li>Return to the app and link your account again, making sure to grant all requested permissions.</li>
+                </ol>
+            </div>
+            
+            <div id="youtube-live" class="faq-section">
+                <h2>4. Enabling YouTube Live</h2>
+                
+                <h3>Why does YouTube say Live is "Not Enabled"?</h3>
+                <p>YouTube requires new channels to <strong>verify their identity</strong> (usually via phone number) before live streaming is permitted. This can take <strong>up to 24 hours</strong> after verification.</p>
+                
+                <h3>How do I enable YouTube Live?</h3>
+                <ol>
+                    <li>Tap <strong>Enable in YouTube Studio</strong> on the Live Control Center or the Link YouTube screen.</li>
+                    <li>Follow YouTube's verification steps (typically entering a phone number).</li>
+                    <li>Wait up to 24 hours.</li>
+                    <li>Return to Vlogger Studio and pull down to refresh or tap <strong>Refresh Status</strong>.</li>
+                </ol>
+                
+                <h3>It's been 24 hours and Live still shows "Not Enabled."</h3>
+                <ul>
+                    <li>Make sure you completed YouTube's verification process fully.</li>
+                    <li>Try tapping <strong>Refresh Status</strong> or pull down to refresh.</li>
+                    <li>Open <a href="https://studio.youtube.com" target="_blank">YouTube Studio</a> in a browser and check your live streaming status under Settings → Channel → Feature eligibility.</li>
+                    <li>If still not enabled, contact YouTube support.</li>
+                </ul>
+            </div>
+            
+            <div id="creating-streams" class="faq-section">
+                <h2>5. Creating Streams</h2>
+                
+                <h3>How do I create a live stream?</h3>
+                <ol>
+                    <li>Tap <strong>Create Live Stream</strong> on the Live Control Center.</li>
+                    <li>Enter a <strong>title</strong> (required).</li>
+                    <li>Optionally add a description, custom thumbnail, privacy setting, scheduled time, and audience designation.</li>
+                    <li>Tap <strong>Create Stream</strong>.</li>
+                </ol>
+                
+                <h3>What privacy options are available?</h3>
+                <ul>
+                    <li><strong>Public</strong> — Anyone can find and watch your stream.</li>
+                    <li><strong>Unlisted</strong> — Only people with the direct link can watch.</li>
+                    <li><strong>Private</strong> — Only you can see the stream.</li>
+                </ul>
+                
+                <h3>What is the "Made for Kids" setting?</h3>
+                <p>YouTube requires all content to be designated as either made for children or not. Selecting <strong>Yes</strong> indicates the content is directed at children and may limit certain features (comments, notifications, etc.) per YouTube's COPPA compliance rules.</p>
+                
+                <h3>Can I use a custom thumbnail?</h3>
+                <p>Yes. When creating or editing a stream, select <strong>Custom</strong> under Thumbnail, then pick an image from your photo library. The image will be cropped to 16:9 aspect ratio. Maximum file size: <strong>1.5 MB</strong>.</p>
+                
+                <h3>Can I schedule a stream for later?</h3>
+                <p>Yes. Use the <strong>Schedule</strong> date and time picker when creating a stream. The default is 5 minutes from the current time.</p>
+            </div>
+            
+            <div id="streaming" class="faq-section">
+                <h2>6. Streaming & Broadcasting</h2>
+                
+                <h3>How do I start streaming?</h3>
+                <ol>
+                    <li>Create a stream (or tap an existing one on the Live Control Center).</li>
+                    <li>On the <strong>Broadcast Detail</strong> screen, tap <strong>Start Streaming</strong>.</li>
+                    <li>On the RTMP screen, tap the <strong>record button</strong> (red circle).</li>
+                    <li>The app will connect to YouTube and automatically transition your broadcast from testing to live.</li>
+                </ol>
+                
+                <h3>How do I stop streaming?</h3>
+                <p>Tap the <strong>record button</strong> (it shows a red square while streaming). The app will stop the RTMP stream and transition your YouTube broadcast to "complete."</p>
+                
+                <h3>What do the stream statuses mean?</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Status</th>
+                            <th>Meaning</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Scheduled</strong></td>
+                            <td>Stream is created but not yet started.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Testing</strong></td>
+                            <td>Stream is connected and sending data, but not visible to viewers yet.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Live</strong></td>
+                            <td>Stream is live and visible to your audience on YouTube.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Complete</strong></td>
+                            <td>Stream has ended.</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <h3>Can I stream again from a completed broadcast?</h3>
+                <p>No. Once a broadcast is marked as "complete," it cannot be restarted. You need to create a new stream.</p>
+                
+                <h3>What does the "LIVE" badge mean?</h3>
+                <p>The red <strong>LIVE</strong> badge appears on screen when your broadcast is actually live on YouTube and visible to viewers.</p>
+                
+                <h3>Why does it take a moment to go live after I press record?</h3>
+                <p>The app goes through several automated steps:</p>
+                <ol>
+                    <li>Connects to YouTube's RTMP ingest server.</li>
+                    <li>Waits for the stream data to be received by YouTube.</li>
+                    <li>Transitions the broadcast from "testing" to "live."</li>
+                </ol>
+                <p>This typically takes 10–30 seconds depending on your connection.</p>
+            </div>
+            
+            <div id="quality" class="faq-section">
+                <h2>7. Video & Audio Quality</h2>
+                
+                <h3>What resolutions are supported?</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Resolution</th>
+                            <th>Recommended Upload Speed</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>480p</td>
+                            <td>1.5+ Mbps</td>
+                        </tr>
+                        <tr>
+                            <td>720p (default)</td>
+                            <td>3+ Mbps</td>
+                        </tr>
+                        <tr>
+                            <td>1080p</td>
+                            <td>6+ Mbps</td>
+                        </tr>
+                        <tr>
+                            <td>2K</td>
+                            <td>12+ Mbps</td>
+                        </tr>
+                        <tr>
+                            <td>4K</td>
+                            <td>20+ Mbps</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <h3>How do I change the streaming resolution?</h3>
+                <ul>
+                    <li><strong>Default resolution</strong> can be set in <strong>Settings → Video → Default Resolution</strong>.</li>
+                    <li>During streaming, tap the <strong>gear icon</strong> on the RTMP screen and select a resolution. Note: you cannot change resolution while actively streaming — you must stop first.</li>
+                    <li>If your device doesn't support a resolution (e.g., 4K on older iPhones), that option will be grayed out.</li>
+                </ul>
+                
+                <h3>Why is my stream at a lower resolution than I selected?</h3>
+                <p>If the camera cannot deliver the requested resolution, the app will automatically fall back to the closest available resolution and show a notice on screen.</p>
+                
+                <h3>How do I mute my microphone?</h3>
+                <p>Tap the <strong>Mute</strong> button (microphone icon) in the quick controls bar. Tap again to unmute.</p>
+                
+                <h3>How do I switch between front and back camera?</h3>
+                <p>Tap the <strong>Camera Flip</strong> button in the quick controls bar.</p>
+                
+                <h3>How do I use the flashlight while streaming?</h3>
+                <p>Tap the <strong>Torch</strong> button in the quick controls bar (only available with the back camera).</p>
+                
+                <h3>How do I zoom in or out?</h3>
+                <p>Use the <strong>+</strong> and <strong>−</strong> buttons in the quick controls bar. Zoom range is 1.0x to 5.0x.</p>
+                
+                <h3>Can I choose a different audio input?</h3>
+                <p>Yes. Tap the <strong>gear icon</strong> on the RTMP screen and select <strong>Audio Input</strong>. You'll see the default microphone and any connected audio devices (e.g., Bluetooth microphones, wired headsets).</p>
+            </div>
+            
+            <div id="management" class="faq-section">
+                <h2>8. Stream Management</h2>
+                
+                <h3>How do I share my stream link?</h3>
+                <ul>
+                    <li>On the <strong>Broadcast Detail</strong> screen, tap <strong>Share Link</strong> to open the iOS share sheet, or tap <strong>Copy Link</strong> to copy the URL.</li>
+                    <li>On the <strong>RTMP screen</strong>, tap the <strong>share button</strong> (square with arrow icon).</li>
+                </ul>
+                
+                <h3>How do I view a completed stream on YouTube?</h3>
+                <p>On the Live Control Center, scroll to the <strong>Completed</strong> section and tap <strong>Watch on YouTube</strong> next to any stream.</p>
+                
+                <h3>Can I see my RTMP details?</h3>
+                <p>Yes. On the <strong>Broadcast Detail</strong> screen, you'll find the <strong>RTMP Server URL</strong> and <strong>Stream Key</strong>. Tap the copy buttons to copy them. You can also toggle <strong>Show Ingest Info</strong> from the gear menu on the RTMP screen.</p>
+                
+                <h3>What is "Backup Ingest"?</h3>
+                <p>YouTube provides a backup RTMP server. If you're experiencing connection issues with the primary server, you can enable <strong>Backup Ingest</strong> from the gear menu on the RTMP screen.</p>
+                
+                <h3>What is RTMPS?</h3>
+                <p>RTMPS is the secure (encrypted) version of RTMP. You can toggle it from the gear menu on the RTMP screen. It's recommended to keep this enabled for security.</p>
+            </div>
+            
+            <div id="settings" class="faq-section">
+                <h2>9. Settings & Customization</h2>
+                
+                <h3>How do I change the app theme?</h3>
+                <p>Go to <strong>Settings → Appearance → Theme</strong> and choose <strong>Light</strong>, <strong>Dark</strong>, or <strong>Auto</strong> (follows your system setting). Default is Dark.</p>
+                
+                <h3>What is "Auto Start"?</h3>
+                <p>When enabled (default), the app automatically begins the go-live process when you press the record button — transitioning through testing to live without additional steps.</p>
+                
+                <h3>What is "Auto Stop"?</h3>
+                <p>When enabled (default), the app automatically stops the stream and transitions the broadcast to "complete" when the RTMP connection is lost.</p>
+                
+                <h3>What is the RTMP Test option?</h3>
+                <p>A testing tool for advanced users. When enabled in <strong>Settings → Stream Defaults → RTMP Test</strong>, a button appears on the Live Control Center that lets you test RTMP streaming to any URL and stream key without creating a YouTube broadcast.</p>
+            </div>
+            
+            <div id="troubleshooting" class="faq-section">
+                <h2>10. Troubleshooting</h2>
+                
+                <h3>The camera shows a black screen.</h3>
+                <ul>
+                    <li>Make sure you've granted <strong>camera permission</strong> to Vlogger Studio in iOS Settings → Privacy → Camera.</li>
+                    <li>Try closing the app completely and reopening it.</li>
+                    <li>If the issue persists after navigating between screens, close and reopen the app.</li>
+                </ul>
+                
+                <h3>I can't hear audio on my stream.</h3>
+                <ul>
+                    <li>Make sure you've granted <strong>microphone permission</strong> in iOS Settings → Privacy → Microphone.</li>
+                    <li>Check that the <strong>Mute</strong> button is not active (microphone icon should not have a line through it).</li>
+                </ul>
+                
+                <h3>I get a "network speed" warning before streaming.</h3>
+                <p>The app checks your connection before streaming begins. If you're on cellular or the detected speed is lower than recommended for your selected resolution, you'll see a warning. You can:</p>
+                <ul>
+                    <li>Switch to Wi-Fi.</li>
+                    <li>Lower the resolution.</li>
+                    <li>Tap <strong>Continue Anyway</strong> to stream regardless.</li>
+                </ul>
+                
+                <h3>My stream keeps buffering or dropping quality.</h3>
+                <ul>
+                    <li>Switch to a <strong>lower resolution</strong> (720p or 480p).</li>
+                    <li>Move closer to your Wi-Fi router.</li>
+                    <li>Avoid streaming over cellular if possible.</li>
+                    <li>Try enabling <strong>Backup Ingest</strong> from the gear menu.</li>
+                </ul>
+                
+                <h3>The app says "Stream session ended."</h3>
+                <p>This means the RTMP connection was terminated. The broadcast has been transitioned to "complete." You need to create a new stream to go live again.</p>
+                
+                <h3>Why does the resolution say "Fallback" on screen?</h3>
+                <p>Your device doesn't support the resolution you selected. The app automatically chose the closest available resolution. To avoid this, select a supported resolution in Settings.</p>
+                
+                <h3>I'm getting "auth expired" or "token refresh" errors.</h3>
+                <p>Your YouTube authorization may have expired. Try:</p>
+                <ol>
+                    <li>Going to the <strong>Link YouTube</strong> screen.</li>
+                    <li>Tapping <strong>Re-link Account</strong> to refresh your authorization.</li>
+                </ol>
+                
+                <h3>YouTube says my broadcast failed to start.</h3>
+                <ul>
+                    <li>Check your internet connection.</li>
+                    <li>Make sure your YouTube Live is enabled.</li>
+                    <li>Try creating a new stream.</li>
+                    <li>If the problem continues, check <a href="https://support.google.com/youtube/answer/2853702" target="_blank">YouTube's live streaming status page</a>.</li>
+                </ul>
+                
+                <h3>The app is asking for camera/microphone permissions again.</h3>
+                <p>If you previously denied permissions, you'll need to enable them manually:</p>
+                <ol>
+                    <li>Open iOS <strong>Settings</strong>.</li>
+                    <li>Scroll to <strong>Vlogger Studio</strong>.</li>
+                    <li>Enable <strong>Camera</strong> and <strong>Microphone</strong>.</li>
+                </ol>
+            </div>
+            
+            <div id="privacy" class="faq-section">
+                <h2>11. Privacy & Security</h2>
+                
+                <h3>What data does Vlogger Studio collect?</h3>
+                <ul>
+                    <li><strong>Account information</strong> — Name, email address, and profile data from your sign-in provider (Google, Apple, or email).</li>
+                    <li><strong>YouTube data</strong> — Channel name, live streaming status, and OAuth tokens (stored securely).</li>
+                    <li><strong>Usage analytics</strong> — Screen views, feature usage, and error events to improve the app.</li>
+                    <li><strong>Camera and microphone</strong> — Accessed only during live streaming and never recorded locally.</li>
+                </ul>
+                
+                <h3>Where is my data stored?</h3>
+                <ul>
+                    <li>Account data and stream records are stored in <strong>Firebase</strong> (Google Cloud).</li>
+                    <li>YouTube OAuth tokens are stored securely using <strong>SecureStore</strong> on your device.</li>
+                    <li>Settings and preferences are stored locally using <strong>AsyncStorage</strong>.</li>
+                </ul>
+                
+                <h3>Does Vlogger Studio store my YouTube videos?</h3>
+                <p>No. The app only manages live streaming. Video content goes directly from your camera to YouTube's servers via RTMP. No video is stored on our servers.</p>
+                
+                <h3>Can I revoke the app's access to my YouTube account?</h3>
+                <p>Yes. You can:</p>
+                <ol>
+                    <li><strong>Delink</strong> in the app (Link YouTube screen → Delink YouTube Account).</li>
+                    <li><strong>Revoke externally</strong> at <a href="https://myaccount.google.com/permissions" target="_blank">myaccount.google.com/permissions</a>.</li>
+                </ol>
+                
+                <h3>How does Vlogger Studio comply with Google's API policies?</h3>
+                <p>Vlogger Studio complies with <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank">Google API Services User Data Policy</a>, including the Limited Use requirements. The app only accesses YouTube data necessary for live streaming functionality.</p>
+            </div>
+            
+            <div id="account-management" class="faq-section">
+                <h2>12. Account Management</h2>
+                
+                <h3>How do I sign out?</h3>
+                <p>Go to <strong>Settings</strong> → scroll to the bottom → tap <strong>Sign Out</strong> → confirm.</p>
+                
+                <h3>How do I delete my account?</h3>
+                <ol>
+                    <li>Go to <strong>Settings</strong>.</li>
+                    <li>Tap <strong>Delete Account</strong> in the Danger Zone section.</li>
+                    <li>Confirm twice (this cannot be undone).</li>
+                    <li>Your account and data will be scheduled for permanent deletion within 30 days.</li>
+                </ol>
+                
+                <h3>How do I contact support?</h3>
+                <ul>
+                    <li><strong>In-app:</strong> Settings → Contact Support (opens email to support@vlogger.app).</li>
+                    <li><strong>Contact form:</strong> Available from the Contact Us screen (accessible from various help links in the app).</li>
+                </ul>
+                
+                <h3>Can I use Vlogger Studio on multiple devices?</h3>
+                <p>Yes. Sign in with the same account on another device. Your YouTube account link and stream data sync via Firebase. However, you can only actively stream from one device at a time.</p>
+            </div>
+            
+            <div style="text-align: center; margin: 50px 0; padding: 30px; background: #f8f9fa; border-radius: 10px;">
+                <p style="font-size: 0.9em; color: #666;">Last updated: February 18, 2026</p>
+                <p style="font-weight: 600; color: #667eea; margin-top: 10px;">Vlogger Studio — Live streaming made simple.</p>
+            </div>
+        </main>
+        
+        <footer>
+            <p>Please review our <a href="https://vlogger-studio.harivemula.com/privacy.html">Privacy Policy</a></p>
+            <div class="social-share">
+                <h3>Share Vlogger Studio</h3>
+                <div class="social-buttons">
+                    <a href="https://x.com/intent/tweet?text=Check%20out%20Vlogger%20Studio%20-%20Professional%20YouTube%20live%20streaming%20from%20your%20iPhone!&url=https://harivemula.github.io" target="_blank" class="social-btn twitter">
+                        <span>𝕏</span> Share on X
+                    </a>
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=https://harivemula.github.io" target="_blank" class="social-btn facebook">
+                        <span>f</span> Share on Facebook
+                    </a>
+                    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://harivemula.github.io" target="_blank" class="social-btn linkedin">
+                        <span>in</span> Share on LinkedIn
+                    </a>
+                    <a href="https://reddit.com/submit?url=https://harivemula.github.io&title=Vlogger%20Studio%20-%20YouTube%20Live%20Streaming%20App" target="_blank" class="social-btn reddit">
+                        <span>⬆</span> Share on Reddit
+                    </a>
+                    <a href="https://wa.me/?text=Check%20out%20Vlogger%20Studio%20-%20Professional%20YouTube%20live%20streaming%20from%20your%20iPhone!%20https://harivemula.github.io" target="_blank" class="social-btn whatsapp">
+                        <span>📱</span> Share on WhatsApp
+                    </a>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
