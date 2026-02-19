@@ -214,6 +214,42 @@
             margin-left: 20px;
         }
         
+        .screenshots {
+            margin: 50px 0;
+            text-align: center;
+        }
+        
+        .screenshots h2 {
+            font-size: 2em;
+            color: #667eea;
+            margin-bottom: 30px;
+        }
+        
+        .screenshot-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 0 20px;
+        }
+        
+        .screenshot-item {
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .screenshot-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+        }
+        
+        .screenshot-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
         footer {
             background: #2c3e50;
             color: white;
@@ -266,6 +302,30 @@
             <div class="hero">
                 <h1>Vlogger Studio: Professional YouTube Live Streaming</h1>
                 <p>Vlogger Studio is the ultimate mobile app for content creators who want to go live on YouTube instantly. Whether you're a vlogger, gamer, educator, or live streamer, Vlogger Studio gives you the power to broadcast professional-quality live streams directly to your YouTube channel—all from your mobile device.</p>
+            </div>
+            
+            <div class="screenshots">
+                <h2>App Screenshots</h2>
+                <div class="screenshot-gallery">
+                    <div class="screenshot-item">
+                        <img src="assets/Slice 1.png" alt="Vlogger Studio Screenshot 1">
+                    </div>
+                    <div class="screenshot-item">
+                        <img src="assets/Slice 2.png" alt="Vlogger Studio Screenshot 2">
+                    </div>
+                    <div class="screenshot-item">
+                        <img src="assets/Slice 3.png" alt="Vlogger Studio Screenshot 3">
+                    </div>
+                    <div class="screenshot-item">
+                        <img src="assets/Slice 4.png" alt="Vlogger Studio Screenshot 4">
+                    </div>
+                    <div class="screenshot-item">
+                        <img src="assets/Slice 5.png" alt="Vlogger Studio Screenshot 5">
+                    </div>
+                    <div class="screenshot-item">
+                        <img src="assets/Slice 6.png" alt="Vlogger Studio Screenshot 6">
+                    </div>
+                </div>
             </div>
             
             <div class="features">
