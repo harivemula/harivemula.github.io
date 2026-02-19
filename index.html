@@ -267,6 +267,48 @@
             text-decoration: underline;
         }
         
+        .social-share {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .social-share h3 {
+            font-size: 1em;
+            margin-bottom: 15px;
+            color: rgba(255,255,255,0.8);
+        }
+        
+        .social-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        
+        .social-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            border-radius: 25px;
+            text-decoration: none;
+            color: white;
+            font-weight: 500;
+            transition: transform 0.3s, opacity 0.3s;
+        }
+        
+        .social-btn:hover {
+            transform: translateY(-2px);
+            opacity: 0.9;
+        }
+        
+        .social-btn.twitter { background: #1DA1F2; }
+        .social-btn.facebook { background: #4267B2; }
+        .social-btn.linkedin { background: #0077B5; }
+        .social-btn.reddit { background: #FF4500; }
+        .social-btn.whatsapp { background: #25D366; }
+        
         @media (max-width: 768px) {
             .hero h1 {
                 font-size: 2em;
@@ -294,6 +336,8 @@
         
         <nav>
             <a href="index.html">Home</a>
+            <a href="userguide.html">User Guide</a>
+            <a href="faq.html">FAQ</a>
             <a href="terms.html">Terms & Conditions</a>
             <a href="https://vlogger-studio.harivemula.com/privacy.html">Privacy Policy</a>
         </nav>
@@ -433,8 +477,28 @@
             </div>
         </main>
     
-        <footer style="text-align:center; padding: 20px;">
+        <footer style="text-align:center; padding: 40px 20px;">
             <p>Please review our <a href="https://vlogger-studio.harivemula.com/privacy.html">Privacy Policy</a></p>
+            <div class="social-share">
+                <h3>Share Vlogger Studio</h3>
+                <div class="social-buttons">
+                    <a href="https://x.com/intent/tweet?text=Check%20out%20Vlogger%20Studio%20-%20Professional%20YouTube%20live%20streaming%20from%20your%20iPhone!&url=https://harivemula.github.io" target="_blank" class="social-btn twitter">
+                        <span>𝕏</span> Share on X
+                    </a>
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=https://harivemula.github.io" target="_blank" class="social-btn facebook">
+                        <span>f</span> Share on Facebook
+                    </a>
+                    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://harivemula.github.io" target="_blank" class="social-btn linkedin">
+                        <span>in</span> Share on LinkedIn
+                    </a>
+                    <a href="https://reddit.com/submit?url=https://harivemula.github.io&title=Vlogger%20Studio%20-%20YouTube%20Live%20Streaming%20App" target="_blank" class="social-btn reddit">
+                        <span>⬆</span> Share on Reddit
+                    </a>
+                    <a href="https://wa.me/?text=Check%20out%20Vlogger%20Studio%20-%20Professional%20YouTube%20live%20streaming%20from%20your%20iPhone!%20https://harivemula.github.io" target="_blank" class="social-btn whatsapp">
+                        <span>📱</span> Share on WhatsApp
+                    </a>
+                </div>
+            </div>
         </footer>
     </div>
 </body>

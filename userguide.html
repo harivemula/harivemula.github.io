@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Vlogger Studio User Guide - Complete guide to using the app">
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <link rel="apple-touch-icon" href="assets/favicon.png">
+    <title>User Guide - Vlogger Studio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            min-height: 100vh;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        
+        .logo {
+            max-width: 180px;
+            height: auto;
+            margin-bottom: 20px;
+            filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1));
+        }
+        
+        nav {
+            background: #f8f9fa;
+            padding: 15px;
+            text-align: center;
+            border-bottom: 1px solid #dee2e6;
+        }
+        
+        nav a {
+            color: #667eea;
+            text-decoration: none;
+            margin: 0 20px;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        nav a:hover {
+            color: #764ba2;
+        }
+        
+        main {
+            padding: 40px 20px;
+        }
+        
+        h1 {
+            color: #667eea;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .intro {
+            text-align: center;
+            font-size: 1.1em;
+            color: #666;
+            margin-bottom: 40px;
+        }
+        
+        .toc {
+            background: #f8f9fa;
+            padding: 30px;
+            margin-bottom: 40px;
+            border-radius: 10px;
+        }
+        
+        .toc h2 {
+            color: #667eea;
+            margin-bottom: 15px;
+        }
+        
+        .toc ol {
+            counter-reset: item;
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .toc li {
+            margin: 8px 0;
+            padding-left: 30px;
+            position: relative;
+        }
+        
+        .toc li:before {
+            content: counter(item) ".";
+            counter-increment: item;
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-weight: 600;
+        }
+        
+        .toc a {
+            color: #667eea;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .toc a:hover {
+            color: #764ba2;
+            text-decoration: underline;
+        }
+        
+        .guide-section {
+            margin-bottom: 50px;
+        }
+        
+        .guide-section h2 {
+            color: #667eea;
+            font-size: 2em;
+            margin-bottom: 25px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #667eea;
+        }
+        
+        .guide-section h3 {
+            color: #333;
+            font-size: 1.5em;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+        
+        .guide-section h4 {
+            color: #555;
+            font-size: 1.2em;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        
+        .guide-section p, .guide-section ul, .guide-section ol {
+            margin-bottom: 15px;
+            color: #555;
+        }
+        
+        .guide-section ul, .guide-section ol {
+            margin-left: 25px;
+        }
+        
+        .guide-section li {
+            margin: 8px 0;
+        }
+        
+        .guide-section a {
+            color: #667eea;
+            text-decoration: none;
+        }
+        
+        .guide-section a:hover {
+            text-decoration: underline;
+        }
+        
+        .guide-section code {
+            background: #f8f9fa;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+            color: #d63384;
+        }
+        
+        .guide-section pre {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            margin: 20px 0;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: white;
+        }
+        
+        table th {
+            background: #667eea;
+            color: white;
+            padding: 12px;
+            text-align: left;
+            font-weight: 600;
+        }
+        
+        table td {
+            padding: 12px;
+            border-bottom: 1px solid #dee2e6;
+        }
+        
+        table tr:hover {
+            background: #f8f9fa;
+        }
+        
+        .tip {
+            background: #e7f3ff;
+            border-left: 4px solid #0066cc;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        
+        .tip strong {
+            color: #0066cc;
+        }
+        
+        .note {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        
+        .note strong {
+            color: #856404;
+        }
+        
+        footer {
+            background: #2c3e50;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        
+        footer a {
+            color: #667eea;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+        
+        footer a:hover {
+            text-decoration: underline;
+        }
+        
+        .social-share {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .social-share h3 {
+            font-size: 1em;
+            margin-bottom: 15px;
+            color: rgba(255,255,255,0.8);
+        }
+        
+        .social-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        
+        .social-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            border-radius: 25px;
+            text-decoration: none;
+            color: white;
+            font-weight: 500;
+            transition: transform 0.3s, opacity 0.3s;
+        }
+        
+        .social-btn:hover {
+            transform: translateY(-2px);
+            opacity: 0.9;
+        }
+        
+        .social-btn.twitter { background: #1DA1F2; }
+        .social-btn.facebook { background: #4267B2; }
+        .social-btn.linkedin { background: #0077B5; }
+        .social-btn.reddit { background: #FF4500; }
+        .social-btn.whatsapp { background: #25D366; }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+            
+            nav a {
+                display: block;
+                margin: 10px 0;
+            }
+            
+            main {
+                padding: 20px 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <a href="index.html"><img src="assets/logo.png" alt="Vlogger Studio" class="logo"></a>
+            <h1 style="color: white; margin: 0;">User Guide</h1>
+            <p style="margin-top: 10px; opacity: 0.9;">Complete guide to using Vlogger Studio</p>
+        </header>
+        
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="userguide.html">User Guide</a>
+            <a href="faq.html">FAQ</a>
+            <a href="terms.html">Terms & Conditions</a>
+            <a href="https://vlogger-studio.harivemula.com/privacy.html">Privacy Policy</a>
+        </nav>
+        
+        <main>
+            <p class="intro">Welcome to <strong>Vlogger Studio</strong>, the app that turns your iPhone into a YouTube live streaming studio. This guide walks you through every feature — from signing up to going live.</p>
+            
+            <div class="toc">
+                <h2>Table of Contents</h2>
+                <ol>
+                    <li><a href="#getting-started">Getting Started</a></li>
+                    <li><a href="#linking-youtube">Linking Your YouTube Account</a></li>
+                    <li><a href="#enabling-live">Enabling YouTube Live</a></li>
+                    <li><a href="#creating-stream">Creating a Live Stream</a></li>
+                    <li><a href="#managing-streams">Managing Your Streams</a></li>
+                    <li><a href="#going-live">Going Live — The RTMP Streaming Screen</a></li>
+                    <li><a href="#editing-stream">Editing a Stream</a></li>
+                    <li><a href="#settings">App Settings</a></li>
+                    <li><a href="#account-management">Account Management</a></li>
+                    <li><a href="#requirements">Requirements</a></li>
+                </ol>
+            </div>
+            
+            <div id="getting-started" class="guide-section">
+                <h2>1. Getting Started</h2>
+                
+                <h3>1.1 Creating an Account</h3>
+                <p>When you first open Vlogger Studio, you'll see the Welcome screen with several sign-in options:</p>
+                <ul>
+                    <li><strong>Continue with Google</strong> — Sign in with your Google account (recommended if you plan to use the same Google account for YouTube).</li>
+                    <li><strong>Sign in with Apple</strong> — Use Face ID / Touch ID for quick, private authentication.</li>
+                    <li><strong>Create Account</strong> — Sign up with your email address and a password.</li>
+                    <li><strong>Sign In</strong> — Already have an account? Tap here.</li>
+                </ul>
+                
+                <h4>Email Sign-Up</h4>
+                <ol>
+                    <li>Tap <strong>Create Account</strong>.</li>
+                    <li>Enter your <strong>Display Name</strong>, <strong>Email</strong>, <strong>Password</strong> (6+ characters), and <strong>Confirm Password</strong>.</li>
+                    <li>Tap <strong>Create Account</strong>.</li>
+                </ol>
+                
+                <h3>1.2 Verifying Your Email</h3>
+                <p>After signing up with email, you'll need to verify your email address:</p>
+                <ol>
+                    <li>Check your inbox (and spam/junk folder) for a verification email.</li>
+                    <li>Tap the verification link in the email.</li>
+                    <li>Return to the app and tap <strong>I've Verified My Email</strong>.</li>
+                    <li>If you didn't receive the email, tap <strong>Resend Verification Email</strong> (available every 60 seconds).</li>
+                </ol>
+                
+                <h3>1.3 Accepting Terms of Service</h3>
+                <p>Before using the app, you must:</p>
+                <ol>
+                    <li>Read and agree to the <strong>Terms of Service</strong> and <strong>Privacy Policy</strong>.</li>
+                    <li>Confirm that you are <strong>at least 18 years old</strong>.</li>
+                    <li>Tap <strong>Accept & Continue</strong> to proceed to the Live Control Center.</li>
+                </ol>
+            </div>
+            
+            <div id="linking-youtube" class="guide-section">
+                <h2>2. Linking Your YouTube Account</h2>
+                <p>To stream on YouTube, you need to connect your YouTube channel.</p>
+                
+                <h3>How to Link</h3>
+                <ol>
+                    <li>From the <strong>Live Control Center</strong>, tap the <strong>Link YouTube Account</strong> card.</li>
+                    <li>Tap <strong>Link YouTube Account</strong> on the next screen.</li>
+                    <li>You'll be taken to a Google sign-in page — sign in with the Google account that owns your YouTube channel.</li>
+                    <li>Grant Vlogger Studio permission to manage your YouTube live streams.</li>
+                    <li>Once linked, you'll see your channel name and live streaming status.</li>
+                </ol>
+                
+                <h3>What Permissions Are Needed?</h3>
+                <p>Vlogger Studio requests the <code>youtube.force-ssl</code> scope, which allows:</p>
+                <ul>
+                    <li>Reading your channel info</li>
+                    <li>Creating and managing live broadcasts</li>
+                    <li>Creating and managing live streams</li>
+                </ul>
+                
+                <h3>Unlinking Your Account</h3>
+                <p>If you need to disconnect your YouTube channel:</p>
+                <ol>
+                    <li>Go to <strong>Live Control Center</strong> → tap the <strong>link icon</strong> next to your channel name.</li>
+                    <li>Scroll down and tap <strong>Delink YouTube Account</strong> (red button).</li>
+                    <li>Confirm in the dialog. Your OAuth token will be revoked and your channel disconnected.</li>
+                </ol>
+            </div>
+            
+            <div id="enabling-live" class="guide-section">
+                <h2>3. Enabling YouTube Live</h2>
+                <p>YouTube requires new channels to verify before live streaming is available. This can take <strong>up to 24 hours</strong>.</p>
+                
+                <h3>Checking Your Status</h3>
+                <p>On the <strong>Live Control Center</strong>, look for the status badge:</p>
+                <ul>
+                    <li><strong>✓ Live Enabled</strong> (green) — You're ready to stream!</li>
+                    <li><strong>⏳ Live Not Enabled</strong> — Activation is still pending.</li>
+                </ul>
+                
+                <h3>How to Enable</h3>
+                <ol>
+                    <li>Tap <strong>Enable in YouTube Studio</strong> on the Live Control Center or the Link YouTube screen. This opens YouTube Studio in your browser.</li>
+                    <li>Alternatively, go to the <strong>Enable Live</strong> screen and tap <strong>Verify on YouTube</strong> to open YouTube's verification page.</li>
+                    <li>Follow YouTube's instructions to verify your identity (usually requires a phone number).</li>
+                    <li>Wait up to 24 hours for activation.</li>
+                    <li>Pull down to refresh or tap <strong>Refresh Status</strong> to check if it's ready.</li>
+                </ol>
+            </div>
+            
+            <div id="creating-stream" class="guide-section">
+                <h2>4. Creating a Live Stream</h2>
+                <p>Once YouTube Live is enabled:</p>
+                <ol>
+                    <li>Tap <strong>Create Live Stream</strong> on the Live Control Center.</li>
+                    <li>Fill in the stream details:</li>
+                </ol>
+                
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Field</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Title</strong></td>
+                            <td>Your stream title (required).</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Description</strong></td>
+                            <td>Optional description shown on YouTube.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Thumbnail</strong></td>
+                            <td>Choose <strong>Auto-generate</strong> (YouTube creates one) or <strong>Custom</strong> (pick from your photo library, 16:9 crop, max 1.5 MB).</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Privacy</strong></td>
+                            <td><strong>Public</strong> (everyone can see), <strong>Unlisted</strong> (only people with the link), or <strong>Private</strong> (only you). Default: Private.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Schedule</strong></td>
+                            <td>When your stream should start. Default: 5 minutes from now.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Made for Kids</strong></td>
+                            <td>Required by YouTube — select Yes or No.</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <ol start="3">
+                    <li>Tap <strong>Create Stream</strong>. The app will create both a YouTube broadcast and an RTMP stream, then return you to the Live Control Center.</li>
+                </ol>
+            </div>
+            
+            <div id="managing-streams" class="guide-section">
+                <h2>5. Managing Your Streams</h2>
+                
+                <h3>The Live Control Center</h3>
+                <p>This is your home screen. It shows:</p>
+                <ul>
+                    <li><strong>Active & Upcoming</strong> — Streams that are scheduled, testing, or currently live. Tap any stream to view its details.</li>
+                    <li><strong>Completed</strong> — Past streams. You can tap <strong>Watch on YouTube</strong> to view the recording.</li>
+                </ul>
+                <p>Pull down to refresh the stream list at any time.</p>
+                
+                <h3>Broadcast Detail Screen</h3>
+                <p>Tap any stream to see:</p>
+                <ul>
+                    <li><strong>Stream title</strong>, description, status, and scheduled time.</li>
+                    <li><strong>Stream Settings</strong> — Privacy status.</li>
+                    <li><strong>RTMP Details</strong> — Server URL and Stream key (tap to copy).</li>
+                    <li><strong>Share</strong> — Share the YouTube link, copy it, or open it in YouTube.</li>
+                    <li><strong>Start Streaming</strong> — Opens the full-screen streaming camera.</li>
+                </ul>
+                <p>You can tap the <strong>edit icon</strong> (pencil) to modify the stream.</p>
+            </div>
+            
+            <div id="going-live" class="guide-section">
+                <h2>6. Going Live — The RTMP Streaming Screen</h2>
+                <p>This is the full-screen camera view where you actually broadcast.</p>
+                
+                <h3>Starting a Stream</h3>
+                <ol>
+                    <li>From the Broadcast Detail, tap <strong>Start Streaming</strong>.</li>
+                    <li>The camera preview fills the screen. Tap anywhere to show/hide controls.</li>
+                    <li>Tap the <strong>record button</strong> (red circle inside a white ring) to begin streaming.</li>
+                    <li>The app automatically handles the YouTube go-live process:
+                        <ul>
+                            <li>Connects to YouTube's ingest server</li>
+                            <li>Waits for the stream to become active</li>
+                            <li>Transitions from "testing" → "live" automatically</li>
+                        </ul>
+                    </li>
+                </ol>
+                
+                <h3>On-Screen Controls</h3>
+                
+                <h4>Top Bar:</h4>
+                <ul>
+                    <li><strong>Back arrow</strong> — return to broadcast detail (stops streaming if active)</li>
+                    <li><strong>Stream title</strong></li>
+                    <li><strong>Network status</strong> — Wi-Fi, Cellular, or Offline indicator</li>
+                    <li><strong>LIVE badge</strong> — appears when your broadcast is live on YouTube</li>
+                </ul>
+                
+                <h4>Quick Controls (horizontal bar in portrait, vertical in landscape):</h4>
+                <ul>
+                    <li><strong>Camera Flip</strong> — Switch between front and back camera</li>
+                    <li><strong>Torch</strong> — Toggle flashlight (back camera only)</li>
+                    <li><strong>Mute</strong> — Mute/unmute microphone</li>
+                    <li><strong>Zoom</strong> — Zoom in (+) and out (−), range: 1.0x to 5.0x</li>
+                </ul>
+                
+                <h4>Record Button:</h4>
+                <ul>
+                    <li><strong>Red circle</strong> = ready to start</li>
+                    <li><strong>Red square</strong> = streaming (tap to stop)</li>
+                </ul>
+                
+                <h4>Settings (gear icon) — opens a menu with:</h4>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Option</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>RTMPS</td>
+                            <td>Toggle secure RTMP streaming (on/off)</td>
+                        </tr>
+                        <tr>
+                            <td>Show Ingest Info</td>
+                            <td>Display the RTMP URL and stream key on screen</td>
+                        </tr>
+                        <tr>
+                            <td>Backup Ingest</td>
+                            <td>Switch to YouTube's backup ingest server</td>
+                        </tr>
+                        <tr>
+                            <td>Orientation Lock</td>
+                            <td>Lock screen rotation while streaming</td>
+                        </tr>
+                        <tr>
+                            <td>Resolution</td>
+                            <td>Change resolution (480p–4K). Cannot be changed while actively streaming.</td>
+                        </tr>
+                        <tr>
+                            <td>Audio Input</td>
+                            <td>Choose between available audio inputs</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <h3>Stopping a Stream</h3>
+                <ol>
+                    <li>Tap the <strong>record button</strong> (red square) to stop streaming.</li>
+                    <li>The app will transition your YouTube broadcast to "complete."</li>
+                    <li>You'll see a "Stream ended" notice. To stream again, create a new broadcast.</li>
+                </ol>
+                
+                <h3>Tips for a Great Stream</h3>
+                <div class="tip">
+                    <ul>
+                        <li><strong>Use Wi-Fi</strong> whenever possible for the most reliable connection.</li>
+                        <li>The app will <strong>warn you</strong> if your network speed may be too slow for the selected resolution.</li>
+                        <li><strong>Higher resolutions</strong> (1080p, 2K, 4K) need faster upload speeds. If your connection is unstable, try 720p or 480p.</li>
+                        <li>The screen stays <strong>awake</strong> automatically while streaming.</li>
+                        <li><strong>Orientation lock</strong> prevents accidental rotation during a stream.</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div id="editing-stream" class="guide-section">
+                <h2>7. Editing a Stream</h2>
+                <p>You can edit a stream before or during its lifecycle:</p>
+                <ol>
+                    <li>From the <strong>Broadcast Detail</strong> screen, tap the <strong>edit icon</strong> (pencil).</li>
+                    <li>You can modify:
+                        <ul>
+                            <li>Title, description</li>
+                            <li>Thumbnail (auto-generate or custom)</li>
+                            <li>Privacy (public / unlisted / private)</li>
+                            <li>Scheduled start time</li>
+                            <li>Auto Start and Auto Stop behavior</li>
+                            <li>Made for kids setting</li>
+                        </ul>
+                    </li>
+                    <li>Tap <strong>Save Changes</strong>.</li>
+                </ol>
+                
+                <div class="note">
+                    <strong>Note:</strong> Completed streams cannot be edited.
+                </div>
+            </div>
+            
+            <div id="settings" class="guide-section">
+                <h2>8. App Settings</h2>
+                <p>Access settings from the <strong>gear icon</strong> on any screen or from the Live Control Center header.</p>
+                
+                <h3>Video</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Setting</th>
+                            <th>Options</th>
+                            <th>Default</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Default Resolution</td>
+                            <td>480p, 720p, 1080p, 2K, 4K</td>
+                            <td>720p</td>
+                            <td>Resolution used for new streams. Options not supported by your device will be grayed out.</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <h3>Stream Defaults</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Setting</th>
+                            <th>Options</th>
+                            <th>Default</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Auto Start</td>
+                            <td>Enabled / Disabled</td>
+                            <td>Enabled</td>
+                            <td>Automatically start streaming when the broadcast goes live.</td>
+                        </tr>
+                        <tr>
+                            <td>Auto Stop</td>
+                            <td>Enabled / Disabled</td>
+                            <td>Enabled</td>
+                            <td>Automatically stop streaming on disconnect.</td>
+                        </tr>
+                        <tr>
+                            <td>RTMP Test</td>
+                            <td>Enabled / Disabled</td>
+                            <td>Disabled</td>
+                            <td>Show RTMP Test option on the Live Control Center for testing your stream setup.</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <h3>Appearance</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Setting</th>
+                            <th>Options</th>
+                            <th>Default</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Theme</td>
+                            <td>Light / Dark / Auto</td>
+                            <td>Dark</td>
+                            <td>App color scheme. Auto follows your system setting.</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <h3>About</h3>
+                <ul>
+                    <li><strong>Open Source Licenses</strong> — View the open source packages used in the app.</li>
+                    <li><strong>Privacy Policy</strong> — Read our full privacy policy.</li>
+                    <li><strong>Terms & Conditions</strong> — Read our full terms of service.</li>
+                    <li><strong>App Version</strong> — Current app version and build number.</li>
+                </ul>
+                
+                <h3>Support</h3>
+                <ul>
+                    <li><strong>Contact Support</strong> — Opens an email to support@vlogger.app.</li>
+                </ul>
+            </div>
+            
+            <div id="account-management" class="guide-section">
+                <h2>9. Account Management</h2>
+                
+                <h3>Signing Out</h3>
+                <ol>
+                    <li>Go to <strong>Settings</strong>.</li>
+                    <li>Tap <strong>Sign Out</strong> at the bottom.</li>
+                    <li>Confirm when prompted. You'll be returned to the Welcome screen.</li>
+                </ol>
+                
+                <h3>Deleting Your Account</h3>
+                <ol>
+                    <li>Go to <strong>Settings</strong>.</li>
+                    <li>Tap <strong>Delete Account</strong> (in the Danger Zone).</li>
+                    <li>Confirm twice — this action is permanent.</li>
+                    <li>Your account and data will be deactivated and scheduled for deletion.</li>
+                </ol>
+                
+                <h3>Contacting Support</h3>
+                <ul>
+                    <li>From the app: <strong>Settings</strong> → <strong>Contact Support</strong> (opens email).</li>
+                    <li>From the <strong>Contact Us</strong> screen: fill in your name, email, subject, and message, then tap <strong>Send Message</strong>.</li>
+                </ul>
+            </div>
+            
+            <div id="requirements" class="guide-section">
+                <h2>10. Requirements</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Requirement</th>
+                            <th>Detail</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Device</strong></td>
+                            <td>iPhone running iOS 17.0 or later</td>
+                        </tr>
+                        <tr>
+                            <td><strong>YouTube Account</strong></td>
+                            <td>A Google account with a YouTube channel</td>
+                        </tr>
+                        <tr>
+                            <td><strong>YouTube Live</strong></td>
+                            <td>Must be enabled (may take up to 24 hours for new channels)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Internet</strong></td>
+                            <td>Active Wi-Fi or cellular connection</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Permissions</strong></td>
+                            <td>Camera and microphone access must be granted</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="guide-section">
+                <h2>Quick Reference — Complete User Flow</h2>
+                <pre>
+Welcome → Sign In / Sign Up → Verify Email → Accept Terms
+    ↓
+Live Control Center → Link YouTube → Enable YouTube Live (24h wait)
+    ↓
+Create Live Stream → Fill details → Stream created
+    ↓
+Tap stream → Broadcast Detail → Start Streaming
+    ↓
+RTMP Screen → Tap Record → You're Live on YouTube!
+    ↓
+Tap Record to Stop → Stream Complete
+                </pre>
+            </div>
+            
+            <div style="text-align: center; margin: 50px 0; padding: 30px; background: #f8f9fa; border-radius: 10px;">
+                <p style="font-weight: 600; color: #667eea; font-size: 1.2em;">Vlogger Studio — Live streaming made simple.</p>
+            </div>
+        </main>
+        
+        <footer>
+            <p>Please review our <a href="https://vlogger-studio.harivemula.com/privacy.html">Privacy Policy</a></p>
+            <div class="social-share">
+                <h3>Share Vlogger Studio</h3>
+                <div class="social-buttons">
+                    <a href="https://x.com/intent/tweet?text=Check%20out%20Vlogger%20Studio%20-%20Professional%20YouTube%20live%20streaming%20from%20your%20iPhone!&url=https://harivemula.github.io" target="_blank" class="social-btn twitter">
+                        <span>𝕏</span> Share on X
+                    </a>
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=https://harivemula.github.io" target="_blank" class="social-btn facebook">
+                        <span>f</span> Share on Facebook
+                    </a>
+                    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://harivemula.github.io" target="_blank" class="social-btn linkedin">
+                        <span>in</span> Share on LinkedIn
+                    </a>
+                    <a href="https://reddit.com/submit?url=https://harivemula.github.io&title=Vlogger%20Studio%20-%20YouTube%20Live%20Streaming%20App" target="_blank" class="social-btn reddit">
+                        <span>⬆</span> Share on Reddit
+                    </a>
+                    <a href="https://wa.me/?text=Check%20out%20Vlogger%20Studio%20-%20Professional%20YouTube%20live%20streaming%20from%20your%20iPhone!%20https://harivemula.github.io" target="_blank" class="social-btn whatsapp">
+                        <span>📱</span> Share on WhatsApp
+                    </a>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
