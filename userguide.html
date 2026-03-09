@@ -330,10 +330,10 @@
         </nav>
         
         <main>
-<h1 id="vlogger-studio-user-guide">Vlogger Studio — User Guide</h1>
-<p>Welcome to <strong>Vlogger Studio</strong>, the app that turns your smartphone into a YouTube live streaming studio. This guide walks you through every feature — from signing up to going live.</p>
-<hr />
-<h2 id="table-of-contents">Table of Contents</h2>
+    <p class="intro">Welcome to <strong>Vlogger Studio</strong>, the app that turns your smartphone into a YouTube live streaming studio. This guide walks you through every feature — from signing up to going live.</p>
+
+    <div class="toc">
+<h2>Table of Contents</h2>
 <ol>
 <li><a href="#1-getting-started">Getting Started</a></li>
 <li><a href="#2-linking-your-youtube-account">Linking Your YouTube Account</a></li>
@@ -346,9 +346,11 @@
 <li><a href="#9-account-management">Account Management</a></li>
 <li><a href="#10-requirements">Requirements</a></li>
 </ol>
-<hr />
-<h2 id="1-getting-started">1. Getting Started</h2>
-<h3 id="11-creating-an-account">1.1 Creating an Account</h3>
+</div>
+
+<section class="guide-section">
+<h2>1. Getting Started</h2>
+<h3>1.1 Creating an Account</h3>
 <p>When you first open Vlogger Studio, you'll see the Welcome screen with several sign-in options:</p>
 <ul>
 <li><strong>Continue with Google</strong> — Sign in with your Google account (recommended if you plan to use the same Google account for YouTube).</li>
@@ -356,13 +358,13 @@
 <li><strong>Create Account</strong> — Sign up with your email address and a password.</li>
 <li><strong>Sign In</strong> — Already have an account? Tap here.</li>
 </ul>
-<h4 id="email-sign-up">Email Sign-Up</h4>
+<h4>Email Sign-Up</h4>
 <ol>
 <li>Tap <strong>Create Account</strong>.</li>
 <li>Enter your <strong>Display Name</strong>, <strong>Email</strong>, <strong>Password</strong> (6+ characters), and <strong>Confirm Password</strong>.</li>
 <li>Tap <strong>Create Account</strong>.</li>
 </ol>
-<h3 id="12-verifying-your-email">1.2 Verifying Your Email</h3>
+<h3>1.2 Verifying Your Email</h3>
 <p>After signing up with email, you'll need to verify your email address:</p>
 <ol>
 <li>Check your inbox (and spam/junk folder) for a verification email.</li>
@@ -370,17 +372,19 @@
 <li>Return to the app and tap <strong>I've Verified My Email</strong>.</li>
 <li>If you didn't receive the email, tap <strong>Resend Verification Email</strong> (available every 60 seconds).</li>
 </ol>
-<h3 id="13-accepting-terms-of-service">1.3 Accepting Terms of Service</h3>
+<h3>1.3 Accepting Terms of Service</h3>
 <p>Before using the app, you must:</p>
 <ol>
 <li>Read and agree to the <strong>Terms of Service</strong> and <strong>Privacy Policy</strong>.</li>
 <li>Confirm that you are <strong>at least 18 years old</strong>.</li>
 <li>Tap <strong>Accept &amp; Continue</strong> to proceed to the Live Control Center.</li>
 </ol>
-<hr />
-<h2 id="2-linking-your-youtube-account">2. Linking Your YouTube Account</h2>
+</section>
+
+<section class="guide-section">
+<h2>2. Linking Your YouTube Account</h2>
 <p>To stream on YouTube, you need to connect your YouTube channel.</p>
-<h3 id="how-to-link">How to Link</h3>
+<h3>How to Link</h3>
 <ol>
 <li>From the <strong>Live Control Center</strong>, tap the <strong>Link YouTube Account</strong> card.</li>
 <li>Tap <strong>Link YouTube Account</strong> on the next screen.</li>
@@ -388,28 +392,32 @@
 <li>Grant Vlogger Studio permission to manage your YouTube live streams.</li>
 <li>Once linked, you'll see your channel name and live streaming status.</li>
 </ol>
-<h3 id="what-permissions-are-needed">What Permissions Are Needed?</h3>
-<p>Vlogger Studio requests the <code>youtube.force-ssl</code> scope, which allows:
-- Reading your channel info
-- Creating and managing live broadcasts
-- Creating and managing live streams</p>
-<h3 id="unlinking-your-account">Unlinking Your Account</h3>
+<h3>What Permissions Are Needed?</h3>
+<p>Vlogger Studio requests the <code>youtube.force-ssl</code> scope, which allows:</p>
+<ul>
+<li>Reading your channel info</li>
+<li>Creating and managing live broadcasts</li>
+<li>Creating and managing live streams</li>
+</ul>
+<h3>Unlinking Your Account</h3>
 <p>If you need to disconnect your YouTube channel:</p>
 <ol>
 <li>Go to <strong>Live Control Center</strong> → tap the <strong>link icon</strong> next to your channel name.</li>
 <li>Scroll down and tap <strong>Delink YouTube Account</strong> (red button).</li>
 <li>Confirm in the dialog. Your OAuth token will be revoked and your channel disconnected.</li>
 </ol>
-<hr />
-<h2 id="3-enabling-youtube-live">3. Enabling YouTube Live</h2>
+</section>
+
+<section class="guide-section">
+<h2>3. Enabling YouTube Live</h2>
 <p>YouTube requires new channels to verify before live streaming is available. This can take <strong>up to 24 hours</strong>.</p>
-<h3 id="checking-your-status">Checking Your Status</h3>
+<h3>Checking Your Status</h3>
 <ul>
 <li>On the <strong>Live Control Center</strong>, look for the status badge:</li>
 <li><strong>✓ Live Enabled</strong> (green) — You're ready to stream!</li>
 <li><strong>⏳ Live Not Enabled</strong> — Activation is still pending.</li>
 </ul>
-<h3 id="how-to-enable">How to Enable</h3>
+<h3>How to Enable</h3>
 <ol>
 <li>Tap <strong>Enable in YouTube Studio</strong> on the Live Control Center or the Link YouTube screen. This opens YouTube Studio in your browser.</li>
 <li>Alternatively, go to the <strong>Enable Live</strong> screen and tap <strong>Verify on YouTube</strong> to open YouTube's verification page.</li>
@@ -417,8 +425,10 @@
 <li>Wait up to 24 hours for activation.</li>
 <li>Pull down to refresh or tap <strong>Refresh Status</strong> to check if it's ready.</li>
 </ol>
-<hr />
-<h2 id="4-creating-a-live-stream">4. Creating a Live Stream</h2>
+</section>
+
+<section class="guide-section">
+<h2>4. Creating a Live Stream</h2>
 <p>Once YouTube Live is enabled:</p>
 <ol>
 <li>Tap <strong>Create Live Stream</strong> on the Live Control Center.</li>
@@ -461,16 +471,18 @@
 <ol>
 <li>Tap <strong>Create Stream</strong>. The app will create both a YouTube broadcast and an RTMP stream, then return you to the Live Control Center.</li>
 </ol>
-<hr />
-<h2 id="5-managing-your-streams">5. Managing Your Streams</h2>
-<h3 id="the-live-control-center">The Live Control Center</h3>
+</section>
+
+<section class="guide-section">
+<h2>5. Managing Your Streams</h2>
+<h3>The Live Control Center</h3>
 <p>This is your home screen. It shows:</p>
 <ul>
 <li><strong>Active &amp; Upcoming</strong> — Streams that are scheduled, testing, or currently live. Tap any stream to view its details.</li>
 <li><strong>Completed</strong> — Past streams. You can tap <strong>Watch on YouTube</strong> to view the recording.</li>
 </ul>
 <p>Pull down to refresh the stream list at any time.</p>
-<h3 id="broadcast-detail-screen">Broadcast Detail Screen</h3>
+<h3>Broadcast Detail Screen</h3>
 <p>Tap any stream to see:</p>
 <ul>
 <li><strong>Stream title</strong>, description, status, and scheduled time.</li>
@@ -480,10 +492,12 @@
 <li><strong>Start Streaming</strong> — Opens the full-screen streaming camera.</li>
 </ul>
 <p>You can tap the <strong>edit icon</strong> (pencil) to modify the stream.</p>
-<hr />
-<h2 id="6-going-live-the-rtmp-streaming-screen">6. Going Live — The RTMP Streaming Screen</h2>
+</section>
+
+<section class="guide-section">
+<h2>6. Going Live — The RTMP Streaming Screen</h2>
 <p>This is the full-screen camera view where you actually broadcast.</p>
-<h3 id="starting-a-stream">Starting a Stream</h3>
+<h3>Starting a Stream</h3>
 <ol>
 <li>From the Broadcast Detail, tap <strong>Start Streaming</strong>.</li>
 <li>The camera preview fills the screen. Tap anywhere to show/hide controls.</li>
@@ -493,17 +507,19 @@
 <li>Waits for the stream to become active</li>
 <li>Transitions from "testing" → "live" automatically</li>
 </ol>
-<h3 id="on-screen-controls">On-Screen Controls</h3>
+<h3>On-Screen Controls</h3>
 <p><strong>Top Bar:</strong>
 - <strong>Back arrow</strong> — return to broadcast detail (stops streaming if active)
 - <strong>Stream title</strong>
 - <strong>Network status</strong> — Wi-Fi, Cellular, or Offline indicator
 - <strong>LIVE badge</strong> — appears when your broadcast is live on YouTube</p>
-<p><strong>Quick Controls</strong> (horizontal bar in portrait, vertical in landscape):
-- <strong>Camera Flip</strong> — Switch between front and back camera
-- <strong>Torch</strong> — Toggle flashlight (back camera only)
-- <strong>Mute</strong> — Mute/unmute microphone
-- <strong>Zoom</strong> — Zoom in (+) and out (−), range: 1.0x to 5.0x</p>
+<p><strong>Quick Controls</strong> (horizontal bar in portrait, vertical in landscape):</p>
+<ul>
+<li><strong>Camera Flip</strong> — Switch between front and back camera</li>
+<li><strong>Torch</strong> — Toggle flashlight (back camera only)</li>
+<li><strong>Mute</strong> — Mute/unmute microphone</li>
+<li><strong>Zoom</strong> — Zoom in (+) and out (−), range: 1.0x to 5.0x</li>
+</ul>
 <p><strong>Record Button:</strong>
 - <strong>Red circle</strong> = ready to start
 - <strong>Red square</strong> = streaming (tap to stop)</p>
@@ -542,13 +558,13 @@
 </tr>
 </tbody>
 </table>
-<h3 id="stopping-a-stream">Stopping a Stream</h3>
+<h3>Stopping a Stream</h3>
 <ol>
 <li>Tap the <strong>record button</strong> (red square) to stop streaming.</li>
 <li>The app will transition your YouTube broadcast to "complete."</li>
 <li>You'll see a "Stream ended" notice. To stream again, create a new broadcast.</li>
 </ol>
-<h3 id="tips-for-a-great-stream">Tips for a Great Stream</h3>
+<h3>Tips for a Great Stream</h3>
 <ul>
 <li><strong>Use Wi-Fi</strong> whenever possible for the most reliable connection.</li>
 <li>The app will <strong>warn you</strong> if your network speed may be too slow for the selected resolution.</li>
@@ -556,8 +572,10 @@
 <li>The screen stays <strong>awake</strong> automatically while streaming.</li>
 <li><strong>Orientation lock</strong> prevents accidental rotation during a stream.</li>
 </ul>
-<hr />
-<h2 id="7-editing-a-stream">7. Editing a Stream</h2>
+</section>
+
+<section class="guide-section">
+<h2>7. Editing a Stream</h2>
 <p>You can edit a stream before or during its lifecycle:</p>
 <ol>
 <li>From the <strong>Broadcast Detail</strong> screen, tap the <strong>edit icon</strong> (pencil).</li>
@@ -573,10 +591,12 @@
 <blockquote>
 <p><strong>Note:</strong> Completed streams cannot be edited.</p>
 </blockquote>
-<hr />
-<h2 id="8-app-settings">8. App Settings</h2>
+</section>
+
+<section class="guide-section">
+<h2>8. App Settings</h2>
 <p>Access settings from the <strong>gear icon</strong> on any screen or from the Live Control Center header.</p>
-<h3 id="video">Video</h3>
+<h3>Video</h3>
 <table>
 <thead>
 <tr>
@@ -595,7 +615,7 @@
 </tr>
 </tbody>
 </table>
-<h3 id="stream-defaults">Stream Defaults</h3>
+<h3>Stream Defaults</h3>
 <table>
 <thead>
 <tr>
@@ -626,7 +646,7 @@
 </tr>
 </tbody>
 </table>
-<h3 id="appearance">Appearance</h3>
+<h3>Appearance</h3>
 <table>
 <thead>
 <tr>
@@ -645,39 +665,43 @@
 </tr>
 </tbody>
 </table>
-<h3 id="about">About</h3>
+<h3>About</h3>
 <ul>
 <li><strong>Open Source Licenses</strong> — View the open source packages used in the app.</li>
 <li><strong>Privacy Policy</strong> — Read our full privacy policy.</li>
 <li><strong>Terms &amp; Conditions</strong> — Read our full terms of service.</li>
 <li><strong>App Version</strong> — Current app version and build number.</li>
 </ul>
-<h3 id="support">Support</h3>
+<h3>Support</h3>
 <ul>
 <li><strong>Contact Support</strong> — Opens an email to support@vlogger.app.</li>
 </ul>
-<hr />
-<h2 id="9-account-management">9. Account Management</h2>
-<h3 id="signing-out">Signing Out</h3>
+</section>
+
+<section class="guide-section">
+<h2>9. Account Management</h2>
+<h3>Signing Out</h3>
 <ol>
 <li>Go to <strong>Settings</strong>.</li>
 <li>Tap <strong>Sign Out</strong> at the bottom.</li>
 <li>Confirm when prompted. You'll be returned to the Welcome screen.</li>
 </ol>
-<h3 id="deleting-your-account">Deleting Your Account</h3>
+<h3>Deleting Your Account</h3>
 <ol>
 <li>Go to <strong>Settings</strong>.</li>
 <li>Tap <strong>Delete Account</strong> (in the Danger Zone).</li>
 <li>Confirm twice — this action is permanent.</li>
 <li>Your account and data will be deactivated and scheduled for deletion.</li>
 </ol>
-<h3 id="contacting-support">Contacting Support</h3>
+<h3>Contacting Support</h3>
 <ul>
 <li>From the app: <strong>Settings</strong> → <strong>Contact Support</strong> (opens email).</li>
 <li>From the <strong>Contact Us</strong> screen: fill in your name, email, subject, and message, then tap <strong>Send Message</strong>.</li>
 </ul>
-<hr />
-<h2 id="10-requirements">10. Requirements</h2>
+</section>
+
+<section class="guide-section">
+<h2>10. Requirements</h2>
 <table>
 <thead>
 <tr>
@@ -708,8 +732,10 @@
 </tr>
 </tbody>
 </table>
-<hr />
-<h2 id="quick-reference-complete-user-flow">Quick Reference — Complete User Flow</h2>
+</section>
+
+<section class="guide-section">
+<h2>Quick Reference — Complete User Flow</h2>
 <pre><code>Welcome → Sign In / Sign Up → Verify Email → Accept Terms
     ↓
 Live Control Center → Link YouTube → Enable YouTube Live (24h wait)
@@ -722,9 +748,10 @@ RTMP Screen → Tap Record → You're Live on YouTube!
     ↓
 Tap Record to Stop → Stream Complete
 </code></pre>
-<hr />
+
 <p><em>Vlogger Studio — Live streaming made simple.</em></p>
-</main>
+</section>
+        </main>
         
         <footer>
             <p>Please review our <a href="https://vlogger-studio.harivemula.com/privacy.html">Privacy Policy</a></p>
