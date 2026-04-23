@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-D15VRZFFH9"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-D15VRZFFH9');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Vlogger Studio Help Videos - Step-by-step video tutorials for using the app">
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <link rel="apple-touch-icon" href="assets/favicon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <title>Help Videos - Vlogger Studio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            min-height: 100vh;
+        }
+
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .logo {
+            max-width: 180px;
+            height: auto;
+            margin-bottom: 20px;
+            filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1));
+        }
+
+        nav {
+            background: #f8f9fa;
+            padding: 15px;
+            text-align: center;
+            border-bottom: 1px solid #dee2e6;
+        }
+
+        nav a {
+            color: #667eea;
+            text-decoration: none;
+            margin: 0 20px;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #764ba2;
+        }
+
+        main {
+            padding: 40px 20px;
+        }
+
+        h1 {
+            color: #667eea;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .intro {
+            text-align: center;
+            font-size: 1.1em;
+            color: #666;
+            margin-bottom: 40px;
+        }
+
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(460px, 1fr));
+            gap: 40px;
+        }
+
+        .video-card {
+            background: #f8f9fa;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            transition: box-shadow 0.3s, transform 0.3s;
+        }
+
+        .video-card:hover {
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 */
+            height: 0;
+            overflow: hidden;
+        }
+
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        .video-info {
+            padding: 20px;
+        }
+
+        .video-info h2 {
+            color: #667eea;
+            font-size: 1.2em;
+            margin-bottom: 8px;
+        }
+
+        .video-info p {
+            color: #666;
+            font-size: 0.95em;
+        }
+
+        footer {
+            background: #f8f9fa;
+            padding: 30px 20px;
+            text-align: center;
+            border-top: 1px solid #dee2e6;
+            color: #666;
+        }
+
+        footer a {
+            color: #667eea;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: #764ba2;
+        }
+
+        .social-share {
+            margin-top: 20px;
+        }
+
+        .social-share h3 {
+            margin-bottom: 15px;
+            color: #555;
+        }
+
+        .social-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .social-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            color: white;
+            text-decoration: none;
+            font-size: 1em;
+            transition: opacity 0.3s;
+        }
+
+        .social-btn:hover {
+            opacity: 0.9;
+        }
+
+        .social-btn.twitter { background: #1DA1F2; }
+        .social-btn.facebook { background: #4267B2; }
+        .social-btn.linkedin { background: #0077B5; }
+        .social-btn.reddit { background: #FF4500; }
+        .social-btn.whatsapp { background: #25D366; }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+
+            nav a {
+                display: block;
+                margin: 10px 0;
+            }
+
+            main {
+                padding: 20px 15px;
+            }
+
+            .video-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <a href="index.html"><img src="assets/logo.png" alt="Vlogger Studio" class="logo"></a>
+            <h1 style="color: white; margin: 0;">Help Videos</h1>
+            <p style="margin-top: 10px; opacity: 0.9;">Step-by-step video tutorials for Vlogger Studio</p>
+        </header>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="userguide.html">User Guide</a>
+            <a href="faq.html">FAQ</a>
+            <a href="videos.html">Help Videos</a>
+            <a href="terms.html">Terms &amp; Conditions</a>
+            <a href="https://vlogger-studio.harivemula.com/privacy.html">Privacy Policy</a>
+        </nav>
+
+        <main>
+            <p class="intro">Watch these tutorials to get the most out of <strong>Vlogger Studio</strong>. More videos coming soon!</p>
+
+            <div class="video-grid">
+
+                <div class="video-card">
+                    <div class="video-wrapper">
+                        <iframe src="https://www.youtube.com/embed/dMPyynR1utY?si=HkptwBJcxChLdxHp"
+                            title="YouTube video player"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin"
+                            allowfullscreen></iframe>
+                    </div>
+                    <div class="video-info">
+                        <h2>How to Enable YouTube Live</h2>
+                        <p>Learn how to enable YouTube Live on your channel so you can start streaming with Vlogger Studio.</p>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+
+        <footer>
+            <p>Please review our <a href="https://vlogger-studio.harivemula.com/privacy.html">Privacy Policy</a></p>
+            <div class="social-share">
+                <h3>Share Vlogger Studio</h3>
+                <div class="social-buttons">
+                    <a href="https://x.com/intent/tweet?text=Check%20out%20Vlogger%20Studio%20-%20Professional%20YouTube%20live%20streaming%20from%20your%20iPhone!&url=https://vlogger-studio.harivemula.com" target="_blank" class="social-btn twitter" title="Share on X">
+                        <i class="fab fa-x-twitter"></i>
+                    </a>
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=https://vlogger-studio.harivemula.com" target="_blank" class="social-btn facebook" title="Share on Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://vlogger-studio.harivemula.com" target="_blank" class="social-btn linkedin" title="Share on LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://reddit.com/submit?url=https://vlogger-studio.harivemula.com&title=Vlogger%20Studio%20-%20YouTube%20Live%20Streaming%20App" target="_blank" class="social-btn reddit" title="Share on Reddit">
+                        <i class="fab fa-reddit-alien"></i>
+                    </a>
+                    <a href="https://wa.me/?text=Check%20out%20Vlogger%20Studio%20-%20Professional%20YouTube%20live%20streaming%20from%20your%20iPhone!%20https://vlogger-studio.harivemula.com" target="_blank" class="social-btn whatsapp" title="Share on WhatsApp">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
